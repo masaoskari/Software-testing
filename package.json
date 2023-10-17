@@ -11,7 +11,11 @@
   "jest": {
     "reporters": [
       "default",
-      ["jest-junit", { "outputDirectory": "./test-results/junit" }]
+      {
+        "jest-junit": {
+          "outputFile": "./test-results/junit/test-results.xml"
+        }
+      }
     ]
   },
   "author": "",
