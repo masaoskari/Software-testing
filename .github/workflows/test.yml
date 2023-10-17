@@ -27,7 +27,7 @@ jobs:
     - name: Archive JUnit report
       uses: actions/upload-artifact@v2
       with:
-        name: junit-report
+        name: artifact
         path: ./test-results/junit
 
     - name: Report using test-reporter
@@ -35,7 +35,7 @@ jobs:
       if: success() || failure()    
       with:
         name: JEST Tests            
-        path: ./test-results/junit/*.xml
+        path: ./test-results/junit/artifact.zip/*.xml
         reporter: jest-junit      
         token: ${{ secrets.GITHUB_TOKEN }}
 
