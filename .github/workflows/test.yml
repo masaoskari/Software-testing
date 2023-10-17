@@ -35,7 +35,7 @@ jobs:
       if: success() || failure()    
       with:
         name: JEST Tests            
-        path: ./test-results/junit/jest-*.xml
+        path: ./test-results/junit
         reporter: jest-junit      
         github_token: ${{ secrets.SECRET_TOKEN }}
 
