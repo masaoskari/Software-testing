@@ -4,9 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "npm run mocha && npm run jest",
+    "test": "npm run mocha && npm run test-jest",
     "mocha": "mocha tests/test_mocha.js",
-    "jest": "npx jest"
+    "test-jest": "jest"
   },
   "jest": {
     "reporters": [
