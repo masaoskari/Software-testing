@@ -21,5 +21,11 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
+    - name: Run Jest and generate JUnit report
       run: npm test
+
+    - name: Archive JUnit report
+      uses: actions/upload-artifact@v2
+      with:
+        name: junit-report
+        path: ./test-results/junit
