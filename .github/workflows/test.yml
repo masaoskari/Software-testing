@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests and Publish Reports
 
 on:
   push:
@@ -29,3 +29,9 @@ jobs:
       with:
         name: junit-report
         path: ./test-results/junit
+
+    - name: Deploy JUnit report as GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./test-results/junit
