@@ -33,5 +33,5 @@ jobs:
     - name: Deploy JUnit report as GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.SECRET_TOKEN }}
         publish_dir: ./test-results/junit
