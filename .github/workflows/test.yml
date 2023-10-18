@@ -37,5 +37,5 @@ jobs:
         name: JEST Tests            
         path: ./reports/*.xml
         reporter: jest-junit      
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.SECRET_TOKEN }}
 
