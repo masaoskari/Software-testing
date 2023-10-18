@@ -4,16 +4,12 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "npm run mocha && npm run jest",
-    "mocha": "mocha tests/test_mocha.js",
-    "jest": "npx jest"
+    "test": "jest --ci --reporters=default --reporters=jest-junit"
   },
   
-  "jest": {
-      "reporters": [
-        "default",
-        ["jest-junit", { "outputDirectory": "./reports" }]
-      ]
+  "jest-junit": {
+    "outputDirectory": "reports",
+    "outputName": "jest-junit.xml"
   },
   "author": "",
   "license": "ISC",
