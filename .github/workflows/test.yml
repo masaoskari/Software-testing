@@ -11,8 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3    
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '18'
       - name: Install dependencies
@@ -28,4 +27,6 @@ jobs:
         with:
           name: JEST Tests           
           path: reports/jest-*.xml   
-          reporter: jest-junit        
+          reporter: jest-junit
+      - name: Test coverage
+        uses: ArtiomTr/jest-coverage-report-action@v2        
