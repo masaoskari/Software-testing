@@ -9,10 +9,7 @@ jobs:
     coverage:
         runs-on: ubuntu-latest
         steps:
-        - name: Checkout code
-          uses: actions/checkout@v3
-    
-        - name: Run coverage report
-          uses: ArtiomTr/jest-coverage-report-action@v2
-          with:
-            github-token: ${{ secrets.SECRET_TOKEN }}
+            - uses: actions/checkout@v3
+            - uses: ArtiomTr/jest-coverage-report-action@v2
+            - with:
+                github-token: ${{ secrets.SECRET_TOKEN }
