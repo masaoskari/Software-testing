@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "jest --ci --reporters=default --reporters=jest-junit --coverage",
+    "test": "jest --ci --reporters=default --reporters=jest-junit",
     "mocha": "mocha ./tests/test_mocha.js --reporter mochawesome"
   },
   "jest-junit": {
