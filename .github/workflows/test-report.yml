@@ -1,20 +1,13 @@
-name: 'Test Report'
+name: 'coverage'
 on:
-  workflow_run:
-    workflows: ['CI']                     
-    types:
-      - completed
-permissions:
-  contents: read
-  actions: read
-  checks: write
+    pull_request:
+    push:
+        branches:
+            - master
+            - main
 jobs:
-  report:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: dorny/test-reporter@v1
-      with:
-        artifact: test-results            
-        name: JEST Tests                  
-        path: '*.xml'                     
-        reporter: jest-junit              
+    coverage:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ArtiomTr/jest-coverage-report-action@v2

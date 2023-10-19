@@ -28,7 +28,3 @@ jobs:
           name: JEST Tests           
           path: reports/jest-*.xml   
           reporter: jest-junit
-      - name: Test coverage
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.SECRET_TOKEN }}        
