@@ -11,13 +11,7 @@
     "outputDirectory": "reports",
     "outputName": "jest-junit.xml"
   },
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "html"
-    ]
-  },
+
   "author": "",
   "license": "ISC",
   "devDependencies": {
