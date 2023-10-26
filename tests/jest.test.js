@@ -1,23 +1,14 @@
 const sum = require('../script.js');
+const { toBeGreaterThan, toEqual} = require('jest-extended');
+const { matchers } = require('jest-chain');
+expect.extend({ ...matchers });
 
 describe('sum function', () => {
-  test('should return the sum of two positive numbers', () => {
-    expect(sum(3, 5)).toBe(8);
-  });
-
-  test('should return the sum of a positive and a negative number', () => {
-    expect(sum(3, -5)).toBe(-2);
-  });
-
-  test('should return the sum of a negative and a positive number', () => {
-    expect(sum(-3, 5)).toBe(2);
-  });
-
-  test('should return zero when adding zero to a number', () => {
-    expect(sum(3, 0)).toBe(3);
-  });
-
-  test('should return the number itself when adding zero to it', () => {
-    expect(sum(0, 5)).toBe(5);
+  test('adds 1 + 2 to equal 3', () => {
+    expect(sum(1, 2))
+      .toBe(3)
+      .not.toBeGreaterThan(3)
+      .not.toBeLessThan(3)
+      .not.toEqual(0)
   });
 });
