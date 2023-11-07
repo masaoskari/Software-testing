@@ -1,6 +1,8 @@
 on:
   pull_request:
+    branches: [ master ]
   push:
+    branches: [ master ]
 permissions:
   contents: read
   actions: read
@@ -10,25 +12,24 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3    
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v2    
+      - uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '16'
       - name: Install dependencies
         run: npm install
   
       - name: Run Jest tests
         run: npm test
       
-     - name: Create coverages
-       run: npm run coveralls
+      - name: Create coverages
+        run: npm run coveralls
 
-     - name: Coveralls
-       uses: coverallsapp/github-action@v2
-       with:
-         github-token: ${{ secrets.SECRET_TOKEN }}
-         path-to-lcov: ./coverage/lcov.info
-         flag-name: coverage
+      - name: Coveralls
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./coverage/lcov.info
 
       - name: Test Report
         uses: dorny/test-reporter@v1
