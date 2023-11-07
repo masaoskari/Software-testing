@@ -25,10 +25,10 @@ jobs:
         run: npm run coveralls
 
       - name: Coveralls
-        uses: coverallsapp/github-action@v1.1.2
+        uses: coverallsapp/github-action@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ./coverage/lcov.info
+          github-token: ${{ secrets.SECRET_TOKEN }}
+
 
       - name: Test Report
         uses: dorny/test-reporter@v1
