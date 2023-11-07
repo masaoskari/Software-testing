@@ -23,12 +23,8 @@ jobs:
       
       - name: Create coverages
         run: npm run coveralls
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-
 
       - name: Test Report
         uses: dorny/test-reporter@v1
