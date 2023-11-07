@@ -21,12 +21,11 @@ jobs:
       - name: Run Jest tests
         run: npm test
       
-      - name: Create coverages
-        run: npm run coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
       - name: Coveralls
         uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          path-to-lcov: ./coverage/lcov.info
         
       - name: Test Report
         uses: dorny/test-reporter@v1
