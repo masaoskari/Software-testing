@@ -19,6 +19,16 @@ jobs:
   
       - name: Run Jest tests
         run: npm test
+      
+     - name: Create coverages
+       run: npm run coveralls
+
+     - name: Coveralls
+       uses: coverallsapp/github-action@v2
+       with:
+         github-token: ${{ secrets.SECRET_TOKEN }}
+         path-to-lcov: ./coverage/lcov.info
+         flag-name: coverage
 
       - name: Test Report
         uses: dorny/test-reporter@v1
